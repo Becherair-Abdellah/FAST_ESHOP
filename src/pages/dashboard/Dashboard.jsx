@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Main from './Main';
+import Aside from './Aside';
 function Dashboard() {
   document.title = 'Dashboard';
   const [height,setNewHeight] = useState(0);
-  const styles = `main_page top-[${height}px] relative bg-blue-900 text-white h-full`;
+  const styles = `main_page top-[${height}px] relative bg-blue-900 text-white h-full pb-[${height}]`;
 
   console.log(styles);
   useEffect(()=>{
@@ -22,9 +23,7 @@ function Dashboard() {
         <Route exact path="*" element={<h1>Not Found It !!</h1>} />
       </Routes>
       </div>
-      <aside className='bg-red-800 fixed h-[100vh] w-[300px] z-[11] top-0'>
-        aside bar
-      </aside>
+      <Aside/>
       <footer className='bg-blue-600 fixed w-full bottom-0'>
         footer
       </footer>
