@@ -4,11 +4,11 @@ import {BsBox,BsTelephone} from 'react-icons/bs'
 import { motion } from 'framer-motion'
 import { useSelector } from 'react-redux';
 function LinksUser() {
-    // const [isTop,setIsTop] = useState(false);
     const isTop = useSelector(({hover})=>hover);
   return (
-    <motion.ul  animate={{
-        top: isTop? '60px': '90px',
+    <motion.ul animate={{
+        display: isTop?'block': 'none',
+        top: isTop? '55px': '90px',
         opacity: isTop? 1: 0,
         // top: isAtTop ? 0 : '50%',
       }}

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { setIsVisible_true } from './redux/Reducers';
+import { setIsVisible_true } from '../../redux/Reducers';
 function Aside() {
   const aside = useRef('');
   const my_visible = useSelector(({my_visible})=>{
