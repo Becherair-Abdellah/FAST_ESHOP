@@ -1,8 +1,10 @@
 import { BrowserRouter as Router,Route ,Routes } from "react-router-dom"
 import Frontend from "./pages/frontend/Frontend"
 import Dashboard from "./pages/dashboard/Dashboard"
+// import  Provider  from 'react-redux';
 function App() {
   return (
+   
     <Router>
       <Routes>
           {/* frontend  */}
@@ -13,6 +15,7 @@ function App() {
         <Route exact path="/*" element={<h1>Not Found</h1>}/>
 
       </Routes>
+      
     </Router>
   )
 }
