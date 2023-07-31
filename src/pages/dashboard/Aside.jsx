@@ -8,7 +8,6 @@ function Aside() {
   const dispatch = useDispatch();
   const styles = `animated-bg fixed h-[100vh] ${my_visible?`left-[-100%]`:`left-0`} w-[300px] z-[11] top-0 duration-300`
   useEffect(()=>{
-    console.log(my_visible);
    const handleClick= (e)=>{
     if(!aside.current.contains(e.target)){
       dispatch(setIsVisible_true());
