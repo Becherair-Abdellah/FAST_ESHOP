@@ -11,6 +11,9 @@ body{
 
   animation: gradientAnimation 8s ease infinite;
 }
+.dash{
+  @apply after:content-normal after:w-4 after:h-5 after:bg-transparent after:absolute after:right-[6rem] after:top-[-12px] ;
+}
 
 @keyframes gradientAnimation {
   0% {

@@ -21,7 +21,17 @@ const hover = createSlice({
         },
     }
 });
+const hover_Ntf = createSlice({
+    name: 'hover_Ntf',
+    initialState : false,
+    reducers:{
+        setIsTop_Ntf:(state)=>{
+            return !state;
+        },
+    }
+});
 export const {setIsVisible_true,setIsVisible_false} = visible.actions;
 export const {setIsTop} = hover.actions;
-export  {visible,hover
+export const {setIsTop_Ntf} = hover_Ntf.actions;
+export  {visible,hover,hover_Ntf
 }

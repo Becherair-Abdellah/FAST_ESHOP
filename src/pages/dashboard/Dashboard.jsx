@@ -8,8 +8,9 @@ import {AiOutlineAlignLeft} from 'react-icons/ai'
 import img from './assets/1.jpg'
 import img2 from './assets/logoD.png'
 import LinksUser from './headerComponents/LinksUser';
-import { setIsTop } from '../../redux/Reducers';
+import {setIsTop ,setIsTop_Ntf} from '../../redux/Reducers';
 import { useDispatch, useSelector } from 'react-redux';
+import Notifications from './headerComponents/Notifications';
 function Dashboard() {
   document.title = 'Dashboard';
   const styles = `main_page relative py-[24px]  bg-blue-900 text-white h-full h-[2000px]`;
@@ -17,7 +18,7 @@ function Dashboard() {
   return (
     <div className=''>
       <header className='bg-gray-50 fixed w-full z-[1] flex justify-between items-center p-4 '>
-        
+      <span className='absolute p-2 w-4 h-4 right-[95px] top-[12px] text-white flex justify-center items-center rounded-full text-sm bg-[#ef3f3e]'>1</span>
         {/* logo */}
         <div className='flex items-center gap-3'>
           <AiOutlineAlignLeft size={20} className='cursor-pointer text-gray-500'/>
@@ -26,9 +27,11 @@ function Dashboard() {
         {/* tools */}
         <div className='flex items-center justify-between gap-3'>
           <FiSearch size={22} className='cursor-pointer text-gray-500'/>
-          <div className='relative'>
-            <span className='absolute p-2 w-4 h-4 -right-[7px] top-[-12px] text-white flex justify-center items-center rounded-full text-sm bg-[#ef3f3e]'>1</span>
+          <div className=''>
+          <div className='' onMouseEnter={()=>dispatch(setIsTop_Ntf(true))}   onMouseLeave={()=>{dispatch(setIsTop_Ntf(false))}} >
           <RiNotification2Line  size={22} className='cursor-pointer text-gray-500'/>
+          <Notifications/>
+          </div>
           </div>
           <FiMoon size={22} className='cursor-pointer text-gray-500'/>
           <div onMouseEnter={()=>dispatch(setIsTop(true))}   onMouseLeave={()=>{dispatch(setIsTop(false))}}   className='w-[40px] h-[40px]'>
