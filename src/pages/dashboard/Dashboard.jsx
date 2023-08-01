@@ -8,11 +8,11 @@ import {AiOutlineAlignLeft} from 'react-icons/ai'
 import img from './assets/1.jpg'
 import img2 from './assets/logoD.png'
 import LinksUser from './headerComponents/LinksUser';
-import {setIsTop ,setIsTop_Ntf} from '../../redux/Reducers';
+import {setIsTop ,setIsTop_Ntf,setIsTop_ClcikSearch} from '../../redux/Reducers';
 import { useDispatch, useSelector } from 'react-redux';
 import Notifications from './headerComponents/Notifications';
 import Search from './headerComponents/Search';
-
+import Footer from './Footer';
 function Dashboard() {
   document.title = 'Dashboard';
   const styles = `main_page relative py-[24px]  animated-bg_test text-white  h-[2000px]`;
@@ -30,7 +30,7 @@ function Dashboard() {
         <Search/>
         {/* tools */}
         <div className='flex items-center justify-between gap-3'>
-          <FiSearch size={22} className='cursor-pointer text-gray-500'/>
+          <FiSearch size={22} className='cursor-pointer text-gray-500 md:hidden' onClick={()=>{dispatch(setIsTop_ClcikSearch(true))}}/>
           <div className=''>
           <div className='' onMouseEnter={()=>dispatch(setIsTop_Ntf(true))}   onMouseLeave={()=>{dispatch(setIsTop_Ntf(false))}} >
           <RiNotification2Line  size={22} className='cursor-pointer text-gray-500'/>
@@ -51,10 +51,7 @@ function Dashboard() {
       </Routes>
       </div>
       <Aside/>
-      <footer className='bg-blue-600 fixed w-full bottom-0'>
-        footer
-      </footer>
-
+      <Footer/>
     </div>
   )
 }

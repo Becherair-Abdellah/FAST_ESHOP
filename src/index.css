@@ -18,7 +18,9 @@ body{
 .dash{
   @apply after:content-normal after:w-4 after:h-5 after:bg-transparent after:absolute after:right-[6rem] after:top-[-12px] ;
 }
-
+.mfx{
+  @apply md:flex md:scale-[1] !important;
+}
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
