@@ -12,8 +12,8 @@ function Notifications() {
             // top: isAtTop ? 0 : '50%',
         }}
             transition={{
-                duration: 0.3,
-            }} className='dash absolute left-[2.5%] rounded-md w-[95%]  bg-white shadow-lg top-[55px]'>
+                duration: .3,
+            }} className='dash absolute right-[2.5%] rounded-md w-[95%]  bg-white shadow-lg top-[55px] md:w-[400px]'>
             <h1 className='text-white text-2xl text-center bg-greenColor p-2 rounded-md rounded-b-none'>Notitications</h1>
             <ul className='p-4 border-b-[1px] border-gray-200 '>
                 <li className='text-gray-500 text-[16px] p-2 flex justify-between items-center'><span className='flex items-center gap-3'><BiSolidCircle size={11} className='text-c1' /> delivery processing</span><span>10min</span></li>

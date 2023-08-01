@@ -5,6 +5,10 @@
 body{
   @apply font-opensans
 }
+.animated-bg_test{
+  background: linear-gradient(-45deg, #0da487, #009289, #653bff);
+
+}
 .animated-bg {
   background: linear-gradient(-45deg, #0da487, #009289, #ffa53b);
   background-size: 400% 400%; 
@@ -26,4 +30,7 @@ body{
     background-position: 0% 50%;
 
   }
+}
+.sh{
+  box-shadow: 0 0 15px -3px gray;
 }

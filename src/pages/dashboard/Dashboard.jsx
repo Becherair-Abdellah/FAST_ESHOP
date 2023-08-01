@@ -11,19 +11,23 @@ import LinksUser from './headerComponents/LinksUser';
 import {setIsTop ,setIsTop_Ntf} from '../../redux/Reducers';
 import { useDispatch, useSelector } from 'react-redux';
 import Notifications from './headerComponents/Notifications';
+import Search from './headerComponents/Search';
+
 function Dashboard() {
   document.title = 'Dashboard';
-  const styles = `main_page relative py-[24px]  bg-blue-900 text-white h-full h-[2000px]`;
+  const styles = `main_page relative py-[24px]  animated-bg_test text-white  h-[2000px]`;
   const dispatch = useDispatch();
   return (
     <div className=''>
-      <header className='bg-gray-50 fixed w-full z-[1] flex justify-between items-center p-4 '>
+      <header className='bg-gray-50 select-none fixed w-full z-[1] flex justify-between items-center p-4 '>
       <span className='absolute p-2 w-4 h-4 right-[95px] top-[12px] text-white flex justify-center items-center rounded-full text-sm bg-[#ef3f3e]'>1</span>
         {/* logo */}
-        <div className='flex items-center gap-3'>
-          <AiOutlineAlignLeft size={20} className='cursor-pointer text-gray-500'/>
-          <img src={img2} onMouseLeave={()=>{console.log('its hover')}}    alt="" className='w-[100px]' />
+        <div className='flex items-center gap-3 md:hidden'>
+          <AiOutlineAlignLeft size={20} className='cursor-pointer text-gray-500 lg:hidden'/>
+          <img src={img2} onMouseLeave={()=>{console.log('its hover')}}    alt="" className='w-[100px] cursor-pointer' />
         </div>
+        {/* search  */}
+        <Search/>
         {/* tools */}
         <div className='flex items-center justify-between gap-3'>
           <FiSearch size={22} className='cursor-pointer text-gray-500'/>
@@ -36,7 +40,7 @@ function Dashboard() {
           <FiMoon size={22} className='cursor-pointer text-gray-500'/>
           <div onMouseEnter={()=>dispatch(setIsTop(true))}   onMouseLeave={()=>{dispatch(setIsTop(false))}}   className='w-[40px] h-[40px]'>
           <LinksUser/>
-            <img src={img} className='h-full w-full object-cover rounded-full' alt="" />
+            <img src={img} className='h-full w-full object-cover rounded-full cursor-pointer' alt="" />
           </div>
         </div>
       </header>
